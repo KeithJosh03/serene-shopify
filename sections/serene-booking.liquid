@@ -38,7 +38,12 @@
               {%- endfor -%}
 
               {%- if has_services -%}
-                <button class="cat-tab-btn {% if first_active %}active{% endif %}" data-target="pane-{{ cat_key }}">
+                <button
+                  class="cat-tab-btn {% if first_active %}active{% endif %}"
+                  data-target="pane-{{ cat_key }}"
+                  data-category-key="{{ cat_key }}"
+                  data-category-name="{{ cat_name | handleize }}"
+                >
                   {{ cat_name }}
                 </button>
                 {%- assign first_active = false -%}
@@ -212,13 +217,43 @@
       datetime: null,
     };
 
-    // Auto-select category tab from URL parameter if present (e.g. ?category=skin)
+    // Robust URL Parameter Category Auto-Select (handles both short keys & hyphenated labels)
     const urlParams = new URLSearchParams(window.location.search);
     const targetCategory = urlParams.get('category');
+
     if (targetCategory) {
-      const matchingTab = document.querySelector(`.cat-tab-btn[data-target="pane-${targetCategory}"]`);
+      let matchingTab = null;
+      tabBtns.forEach((btn) => {
+        btn.addEventListener('click', function () {
+          tabBtns.forEach((b) => b.classList.remove('active'));
+          panes.forEach((p) => p.classList.remove('active'));
+
+          this.classList.add('active');
+          const targetPane = document.getElementById(this.dataset.target);
+          if (targetPane) {
+            targetPane.classList.add('active');
+          }
+
+          // Get the category key (e.g., "skin" or "hair")
+          const catKey = this.getAttribute('data-category-key');
+
+          // Update the browser URL without reloading the page
+          if (catKey) {
+            const newUrl = `${window.location.pathname}?category=${catKey}`;
+            window.history.replaceState({ category: catKey }, '', newUrl);
+          }
+        });
+      });
+
       if (matchingTab) {
-        matchingTab.click();
+        tabBtns.forEach((b) => b.classList.remove('active'));
+        panes.forEach((p) => p.classList.remove('active'));
+
+        matchingTab.classList.add('active');
+        const targetPane = document.getElementById(matchingTab.dataset.target);
+        if (targetPane) {
+          targetPane.classList.add('active');
+        }
       }
     }
 
@@ -308,7 +343,6 @@
       completeBtn.textContent = 'SECURED CHECKOUT...';
       completeBtn.setAttribute('disabled', 'true');
 
-      // Add custom booking properties (Practitioner and Time) as line item properties
       let formData = {
         items: [
           {
@@ -334,7 +368,6 @@
           return response.json();
         })
         .then((data) => {
-          // Redirect straight to Shopify checkout page
           window.location.href = '/checkout';
         })
         .catch((error) => {
@@ -377,7 +410,8 @@
             { "value": "hair", "label": "Hair Studio" },
             { "value": "skin", "label": "Skin Therapy" },
             { "value": "nails", "label": "Nail Atelier" },
-            { "value": "spa", "label": "Spa Sanctuary" }
+            { "value": "spa", "label": "Spa Sanctuary" },
+            { "value": "facials", "label": "Signature Facials" }
           ],
           "default": "skin"
         },

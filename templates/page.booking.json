@@ -12,6 +12,83 @@
     "booking_flow": {
       "type": "serene-booking",
       "blocks": {
+        "service_rBgKtg": {
+          "type": "service",
+          "settings": {
+            "category": "spa",
+            "product": "",
+            "title": "Harmonic Sound Bath & Massage",
+            "description": "A synchronized rhythmic massage accompanied by vibrational sound healing to restore inner energetic equilibrium.",
+            "duration": "90",
+            "price": "240"
+          }
+        },
+        "service_h6jWMm": {
+          "type": "service",
+          "settings": {
+            "category": "spa",
+            "product": "",
+            "title": "Hot Stone Basalt Ritual",
+            "description": "Warm basalt stones glide across the body to penetrate deep muscle layers and induce total nervous system relaxation.",
+            "duration": "90",
+            "price": "220"
+          }
+        },
+        "service_tYJqqR": {
+          "type": "service",
+          "settings": {
+            "category": "spa",
+            "product": "",
+            "title": "Deep Tissue Aromatherapy Massage",
+            "description": "Focused pressure release using custom-blended essential oils to relieve chronic tension and melt away stress.",
+            "duration": "60",
+            "price": "160"
+          }
+        },
+        "service_fwaPBy": {
+          "type": "service",
+          "settings": {
+            "category": "nails",
+            "product": "",
+            "title": "Botanical Hand & Foot Renewal",
+            "description": "A combined ultimate grooming ritual featuring warm paraffin wax treatments and deep hydration therapy.",
+            "duration": "90",
+            "price": "140"
+          }
+        },
+        "service_8UVFDx": {
+          "type": "service",
+          "settings": {
+            "category": "nails",
+            "product": "",
+            "title": "Gel Architectural Overlay",
+            "description": "Strengthening builder gel applied over natural nails to promote healthy length and durable, glossy wear.",
+            "duration": "75",
+            "price": "110"
+          }
+        },
+        "service_d3Kmdb": {
+          "type": "service",
+          "settings": {
+            "category": "skin",
+            "product": "",
+            "title": "Therapeutic Mineral Pedicure",
+            "description": "Relaxing foot soak with Himalayan pink salts, exfoliating scrub, callus care, and a nourishing botanical massage.",
+            "duration": "65",
+            "price": "85"
+          }
+        },
+        "service_qtRGVc": {
+          "type": "service",
+          "settings": {
+            "category": "nails",
+            "product": "",
+            "title": "Serene Signature Organic Manicure",
+            "description": "Gentle nail shaping, cuticle care, organic hand massage, and flawless non-toxic polish application.",
+            "duration": "45",
+            "price": "65"
+          }
+        },
         "service_8gi9qD": {
           "type": "service",
           "settings": {
@@ -48,7 +125,7 @@
         "service_NKznRH": {
           "type": "service",
           "settings": {
-            "category": "facials",
+            "category": "skin",
             "product": "",
             "title": "Purifying Ritual",
             "description": "A targeted treatment for congested skin, featuring deep cleansing, extraction, and calming mask.",
@@ -59,33 +136,28 @@
         "service_MbQQPp": {
           "type": "service",
           "settings": {
-            "category": "facials",
+            "category": "skin",
             "product": "",
             "title": "The Serene Glow",
             "description": "A deeply hydrating treatment utilizing botanical extracts.",
             "duration": "60",
             "price": "150"
           }
-        },
-        "service_Gm7UXJ": {
-          "type": "service",
-          "settings": {
-            "category": "facials",
-            "product": "",
-            "title": "Cellular Renewal",
-            "description": "Advanced exfoliation combined with LED theraphy to stimulate collagen production and refine texture.",
-            "duration": "90",
-            "price": "150"
-          }
         }
       },
       "block_order": [
+        "service_rBgKtg",
+        "service_h6jWMm",
+        "service_tYJqqR",
+        "service_fwaPBy",
+        "service_8UVFDx",
+        "service_d3Kmdb",
+        "service_qtRGVc",
         "service_8gi9qD",
         "service_AGnTQw",
         "service_ty8ryD",
         "service_NKznRH",
-        "service_MbQQPp",
-        "service_Gm7UXJ"
+        "service_MbQQPp"
       ],
       "settings": {
         "page_title": "Select Your Service",
