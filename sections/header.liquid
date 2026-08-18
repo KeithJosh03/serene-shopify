@@ -81,6 +81,16 @@
   capture menu
     content_for 'block', type: '_header-menu', id: 'header-menu'
   endcapture
+  assign menu_str = menu | strip
+  if menu_str == blank and section.settings.menu != blank
+    capture menu
+      echo '<ul style="display:flex; list-style:none; gap:30px; margin:0; padding:0; justify-content:center; align-items:center;">'
+      for link in linklists[section.settings.menu].links
+        echo '<li><a href="' | append: link.url | append: '" style="text-decoration:none; color:inherit; font-family:var(--font-heading-family); font-weight:600; font-size:13px; letter-spacing:1.5px; text-transform:uppercase;">' | append: link.title | append: '</a></li>'
+      endfor
+      echo '</ul>'
+    endcapture
+  endif
 
   capture drawer_menu
     content_for 'block', type: '_header-menu', id: 'header-menu', variant: 'mobile'
@@ -400,7 +410,7 @@
       {% endif %}
       {% if row == 'top' %}
         <div style="grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 20px 40px; max-width: 1600px; margin: 0 auto;">
-          {% if template.name == 'index' %}
+          {% if request.page_type == 'index' %}
             <div style="flex: 1; display: flex; justify-content: flex-start; align-items: center;">
               {{ logo }}
             </div>
