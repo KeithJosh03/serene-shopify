@@ -1,0 +1,373 @@
+  .serene-booking-page {
+      background-color: #fcfbf9;
+      color: #2c2a29;
+      padding: 60px 20px;
+      font-family: inherit;
+  }
+
+  .serene-booking-container {
+      max-width: 1300px;
+      margin: 0 auto;
+  }
+
+  .serene-booking-header {
+      text-align: center;
+      margin-bottom: 40px;
+  }
+
+  .serene-booking-header h2 {
+      font-size: 2.5rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+      color: #1a1918;
+  }
+
+  .serene-booking-header p {
+      font-size: 1.05rem;
+      color: #6b6764;
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.6;
+  }
+
+  .serene-booking-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 40px;
+      align-items: start;
+  }
+
+  @media (max-width: 1024px) {
+      .serene-booking-layout {
+          grid-template-columns: 1fr;
+      }
+  }
+
+  .booking-step-block {
+      background: #ffffff;
+      border: 1px solid #e8e5e0;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  }
+
+  .step-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #f0eee9;
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+  }
+
+  .step-title-row h3 {
+      font-size: 1.25rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+  }
+
+  .step-badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: #8c7853;
+      background: #f7f5ef;
+      padding: 6px 12px;
+      border-radius: 20px;
+  }
+
+  /* Category Tabs Styling */
+  .category-tabs-nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+      border-bottom: 1px solid #f0eee9;
+      padding-bottom: 15px;
+  }
+
+  .cat-tab-btn {
+      background: #f7f5ef;
+      border: 1px solid #e8e5e0;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #6b6764;
+      cursor: pointer;
+      transition: all 0.25s ease;
+  }
+
+  .cat-tab-btn:hover {
+      border-color: #8c7853;
+      color: #1a1918;
+  }
+
+  .cat-tab-btn.active {
+      background: #1a1918;
+      color: #ffffff;
+      border-color: #1a1918;
+  }
+
+  /* Category Content Panes */
+  .category-pane {
+      display: none;
+  }
+
+  .category-pane.active {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+      from {
+          opacity: 0;
+          transform: translateY(4px);
+      }
+
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+
+  .service-cards-grid,
+  .practitioner-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+  }
+
+  .service-card,
+  .practitioner-card {
+      border: 1px solid #e8e5e0;
+      border-radius: 8px;
+      padding: 24px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: #ffffff;
+      position: relative;
+  }
+
+  .service-card:hover,
+  .practitioner-card:hover {
+      border-color: #8c7853;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(140, 120, 83, 0.08);
+  }
+
+  .service-card.active,
+  .practitioner-card.active {
+      border-color: #8c7853;
+      background: #fbf9f5;
+      box-shadow: 0 4px 12px rgba(140, 120, 83, 0.12);
+  }
+
+  .service-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
+  }
+
+  .service-card-top h4 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #1a1918;
+  }
+
+  .check-icon {
+      display: none;
+      color: #8c7853;
+      font-weight: bold;
+  }
+
+  .service-card.active .check-icon {
+      display: block;
+  }
+
+  .service-card p {
+      font-size: 0.9rem;
+      color: #6b6764;
+      line-height: 1.5;
+      margin-bottom: 20px;
+  }
+
+  .service-card-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      color: #6b6764;
+      border-top: 1px solid #f4f2ee;
+      padding-top: 15px;
+  }
+
+  .service-price {
+      font-weight: 600;
+      color: #1a1918;
+  }
+
+  /* Practitioner styles */
+  .practitioner-card {
+      text-align: center;
+  }
+
+  .practitioner-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto 15px auto;
+      overflow: hidden;
+      background: #f0eee9;
+  }
+
+  .practitioner-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .practitioner-card h4 {
+      font-size: 1rem;
+      margin-bottom: 5px;
+  }
+
+  .practitioner-card p {
+      font-size: 0.85rem;
+      color: #8c7853;
+  }
+
+  /* Summary Sidebar */
+  .serene-summary-sidebar {
+      position: sticky;
+      top: 40px;
+  }
+
+  .summary-card {
+      background: #ffffff;
+      border: 1px solid #e8e5e0;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  }
+
+  .summary-card h3 {
+      font-size: 1.25rem;
+      font-weight: 500;
+      border-bottom: 1px solid #f0eee9;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+  }
+
+  .summary-line-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #f0eee9;
+  }
+
+  .summary-line-item strong {
+      display: block;
+      font-size: 1rem;
+      color: #1a1918;
+      margin-bottom: 4px;
+  }
+
+  .sub-text {
+      font-size: 0.85rem;
+      color: #8c7853;
+  }
+
+  .summary-price {
+      font-weight: 600;
+      font-size: 1.1rem;
+  }
+
+  .summary-meta-group {
+      margin-bottom: 25px;
+  }
+
+  .meta-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+  }
+
+  .meta-label {
+      color: #6b6764;
+  }
+
+  .meta-value {
+      font-weight: 500;
+      color: #1a1918;
+  }
+
+  .meta-value.pending {
+      color: #a8a4a0;
+      font-style: italic;
+  }
+
+  .summary-total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-top: 1px solid #f0eee9;
+      padding-top: 20px;
+      margin-bottom: 25px;
+  }
+
+  .total-amount {
+      font-size: 1.4rem;
+      color: #8c7853;
+  }
+
+  .serene-complete-btn {
+      width: 100%;
+      background-color: #1a1918;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      padding: 16px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      text-align: center;
+  }
+
+  .serene-complete-btn:hover:not(:disabled) {
+      background-color: #33312f;
+  }
+
+  .serene-complete-btn:disabled {
+      background-color: #e0deda;
+      color: #8c8985;
+      cursor: not-allowed;
+  }
+
+  .tax-note {
+      display: block;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #8c8985;
+      margin-top: 15px;
+      letter-spacing: 0.05em;
+  }
+
+  .date-select-btn {
+      border-radius: 6px !important;
+      transition: all 0.2s ease;
+  }
+
+  .date-select-btn:hover {
+      border-color: #8c7853 !important;
+  }

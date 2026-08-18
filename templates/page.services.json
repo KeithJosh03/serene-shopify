@@ -1,0 +1,72 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "serene-curated-rituals",
+      "blocks": {
+        "ritual_card_zx6qKD": {
+          "type": "ritual_card",
+          "settings": {
+            "image": "shopify://shop_images/hairstudio.jpg",
+            "category_tag": "Hair Artistry",
+            "description": "Beyond simple cutting, we practice hair artistry. Our approach considers your natural texture, lifestyle, and personal aesthetic, creating effortless styles that grow out beautifully and feel inherently yours.",
+            "link_label": "",
+            "link_url": "/pages/booking?category=hair-studio"
+          }
+        },
+        "ritual_card_npEqXm": {
+          "type": "ritual_card",
+          "settings": {
+            "image": "shopify://shop_images/skintherapy.jpg",
+            "category_tag": "Skin Therapy",
+            "description": "Our facial treatments blend botanical purity with advanced techniques. We focus on deep nourishment and gentle revitalization, honoring your skin's natural barrier to reveal a luminous, healthy complexion.",
+            "link_label": "View Menu",
+            "link_url": "/pages/booking?category=skin-therapy"
+          }
+        },
+        "ritual_card_hinTWa": {
+          "type": "ritual_card",
+          "settings": {
+            "image": "shopify://shop_images/spa.jpg",
+            "category_tag": "Spa Sanctuary",
+            "description": "Surrender to total body restoration. Our holistic therapies, encompassing therapeutic massage and warm body wraps, are designed to soothe tension, stimulate circulation, and guide you into a state of profound stillness.",
+            "link_label": "View Menu",
+            "link_url": ""
+          }
+        },
+        "ritual_card_wxKzpL": {
+          "type": "ritual_card",
+          "settings": {
+            "image": "shopify://shop_images/nail.jpg",
+            "category_tag": "Nail Atelier",
+            "description": "Experience the art of nail and hand care. Our curated treatments combine mindful, eco-conscious techniques with nourishing botanical formulations to nurture your natural radiance while promoting lasting health and quiet relaxation.",
+            "link_label": "View Menu",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "ritual_card_zx6qKD",
+        "ritual_card_npEqXm",
+        "ritual_card_hinTWa",
+        "ritual_card_wxKzpL"
+      ],
+      "settings": {
+        "kicker": "SERVICES OVERVIEW",
+        "title": "Our Curated Rituals",
+        "subtitle": "Experience a meticulously crafted collection of treatments designed to foster slow beauty, deep relaxation, and profound rejuvenation in a minimalist sanctuary."
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

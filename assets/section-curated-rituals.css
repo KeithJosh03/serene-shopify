@@ -1,0 +1,224 @@
+.serene-rituals-page {
+    background-color: #fcfbf9;
+    color: #2c2a29;
+    padding: 80px 20px;
+    font-family: inherit;
+}
+
+.serene-rituals-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.serene-rituals-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.serene-kicker {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: #8c7853;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.serene-rituals-header h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    margin-bottom: 16px;
+    color: #1a1918;
+}
+
+.serene-rituals-header p {
+    font-size: 1.05rem;
+    color: #6b6764;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.rituals-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+}
+
+.ritual-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Zigzag Pattern: Reverse columns on even rows */
+.ritual-row.reverse {
+    direction: rtl;
+}
+
+.ritual-row.reverse>* {
+    direction: ltr;
+}
+
+@media (max-width: 900px) {
+
+    .ritual-row,
+    .ritual-row.reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+        gap: 30px;
+    }
+}
+
+/* Image Wrappers & Collages */
+.ritual-image-wrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f0eee9;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.ritual-image-wrapper img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.ritual-image-wrapper:hover img {
+    transform: scale(1.02);
+}
+
+/* Multi-image Collage Layout */
+.ritual-collage {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.collage-main-img img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.collage-sub-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.collage-sub-grid img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Content Styling */
+.ritual-content {
+    padding: 20px 0;
+}
+
+.ritual-category-tag {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: #8c7853;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.ritual-content h2 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #1a1918;
+    margin-bottom: 18px;
+    letter-spacing: 0.02em;
+}
+
+.ritual-content p {
+    font-size: 1rem;
+    color: #6b6764;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.ritual-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #1a1918;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.ritual-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #8c7853;
+    transition: width 0.3s ease;
+}
+
+.ritual-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    /* Adds space for the sliding arrow */
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #1a1918;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.ritual-link .arrow-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* Hover UX: Underline expands and arrow slides right */
+.ritual-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #8c7853;
+    transform: scaleX(0.3);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.ritual-link:hover::after {
+    transform: scaleX(1);
+}
+
+.ritual-link:hover .arrow-icon {
+    transform: translateX(4px);
+}
+
+
+
+.ritual-link:hover::after {
+    width: 50%;
+}

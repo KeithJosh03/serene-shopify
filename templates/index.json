@@ -1,0 +1,83 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "serene_hero_custom": {
+      "type": "serene-hero",
+      "settings": {
+        "background_image": "shopify://shop_images/herobg.png",
+        "heading": "Quiet Luxury, Elevated.",
+        "subtext": "Experience a sanctuary of rejuvenation. Tailored services designed to restore balance and enhance your natural radiance.",
+        "button_label": "Discover Our Services",
+        "button_link": ""
+      }
+    },
+    "serene_curated_grid": {
+      "type": "serene-grid",
+      "blocks": {
+        "column_GXVVB3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/hairstudio.jpg",
+            "title": "Hair Studio",
+            "link": ""
+          }
+        },
+        "column_WHYEqM": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/skintherapy.jpg",
+            "title": "Skin Therapy",
+            "link": ""
+          }
+        },
+        "column_wDVbtW": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/nail.jpg",
+            "title": "Nail Atelier",
+            "link": ""
+          }
+        },
+        "column_hf4Acg": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/spa.jpg",
+            "title": "Spa Sanctuary",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_GXVVB3",
+        "column_WHYEqM",
+        "column_wDVbtW",
+        "column_hf4Acg"
+      ],
+      "settings": {
+        "section_heading": "Curated Experiences",
+        "section_subtext": "Select from our range of bespoke treatments, each designed with meticulous attention to detail and your absolute comfort in mind."
+      }
+    },
+    "serene_footer": {
+      "type": "serene-footer",
+      "settings": {
+        "footer_logo_text": "SERENE",
+        "menu": "",
+        "copyright_text": "© 2024 SERENE WELLNESS & SPA. ALL RIGHTS RESERVED."
+      }
+    }
+  },
+  "order": [
+    "serene_hero_custom",
+    "serene_curated_grid",
+    "serene_footer"
+  ]
+}

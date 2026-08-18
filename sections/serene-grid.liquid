@@ -1,0 +1,84 @@
+<div class="serene-curated-section">
+  {{ 'serene-custom.css' | asset_url | stylesheet_tag }}
+  <div class="serene-container">
+    <h2>{{ section.settings.section_heading }}</h2>
+    <p>{{ section.settings.section_subtext }}</p>
+
+    <div class="serene-grid">
+      {%- for block in section.blocks -%}
+        <div class="serene-card" {{ block.shopify_attributes }}>
+          <div class="serene-card-image">
+            {%- if block.settings.image != blank -%}
+              <img
+                src="{{ block.settings.image | image_url: width: 600 }}"
+                alt="{{ block.settings.title }}"
+                loading="lazy"
+                width="600"
+                height="400"
+              >
+            {%- else -%}
+              {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+          </div>
+          <h3>{{ block.settings.title }}</h3>
+          <a href="{{ block.settings.link }}" class="serene-explore-link">EXPLORE</a>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Serene Curated Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Heading",
+      "default": "Curated Experiences"
+    },
+    {
+      "type": "textarea",
+      "id": "section_subtext",
+      "label": "Subtext",
+      "default": "Select from our range of bespoke treatments..."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Experience Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Card Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Hair Studio"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Serene Curated Grid",
+      "blocks": [
+        { "type": "column", "settings": { "title": "Hair Studio" } },
+        { "type": "column", "settings": { "title": "Skin Therapy" } },
+        { "type": "column", "settings": { "title": "Nail Atelier" } },
+        { "type": "column", "settings": { "title": "Spa Sanctuary" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

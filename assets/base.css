@@ -1,0 +1,1062 @@
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+  max-width: 100% !important;
+  overflow-x: hidden;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
+
+h1.visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+
+
+
+
+header.header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  background-color: #FDFBF7;
+  /* Soft luxury cream tone */
+}
+
+.header__heading-link {
+  font-family: serif;
+  letter-spacing: 0.15em;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.header__inline-menu .header__menu-item {
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  color: #2C2C2C;
+}
+
+
+/* --- SERENE Luxury Hero Styles --- */
+.serene-hero-banner {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.serene-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(253, 251, 247, 0.4), rgba(253, 251, 247, 0.9));
+}
+
+.serene-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.serene-hero-content h1 {
+  font-family: serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  letter-spacing: 0.02em;
+}
+
+.serene-hero-content p {
+  font-size: 1.05rem;
+  color: #4a4a4a;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.serene-hero-btn {
+  display: inline-block;
+  background-color: #4A5D4E;
+  /* Luxury muted green tone */
+  color: #ffffff;
+  padding: 12px 28px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.serene-hero-btn:hover {
+  background-color: #3b4c3e;
+}
+
+
+
+
+
+/* --- SERENE Curated Grid Styles --- */
+.serene-curated-section {
+  padding: 80px 5% 120px 5%;
+  background-color: #FDFBF7;
+  text-align: center;
+}
+
+.serene-curated-section h2 {
+  font-family: serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+}
+
+.serene-curated-section p {
+  font-size: 0.95rem;
+  color: #555555;
+  max-width: 650px;
+  margin: 0 auto 50px auto;
+  line-height: 1.5;
+}
+
+.serene-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .serene-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .serene-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.serene-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 601px) {
+  .serene-card:nth-child(even) {
+    margin-top: 80px;
+  }
+}
+
+.serene-card-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  margin-bottom: 16px;
+  background-color: #f0ebe1;
+}
+
+.serene-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.serene-card-image img:hover {
+  transform: scale(1.03);
+}
+
+.serene-card h3 {
+  font-family: serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.serene-explore-link {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.serene-explore-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 1px;
+  background-color: #1a1a1a;
+  transition: width 0.3s ease;
+}
+
+.serene-explore-link:hover::after {
+  width: 100%;
+}
+
+
+
+/* --- SERENE Booking Flow Styles --- */
+.serene-booking-page {
+  background-color: #FDFBF7;
+  padding: 60px 5% 100px 5%;
+}
+
+.serene-booking-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.serene-booking-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.serene-booking-header h2 {
+  font-family: serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.serene-booking-header p {
+  font-size: 0.95rem;
+  color: #555555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.serene-booking-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 40px;
+}
+
+.booking-step-block {
+  margin-bottom: 40px;
+  background: transparent;
+}
+
+.step-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.step-title-row h3 {
+  font-family: serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #1a1a1a;
+}
+
+.step-badge {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: #777;
+}
+
+.service-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.service-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.service-card.active {
+  border-color: #4a6b5d;
+  box-shadow: 0 4px 12px rgba(74, 107, 93, 0.08);
+}
+
+.service-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.service-card-top h4 {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.check-icon {
+  display: none;
+  color: #4a6b5d;
+  font-weight: bold;
+}
+
+.service-card.active .check-icon {
+  display: block;
+}
+
+.service-card p {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.service-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.service-price {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.practitioner-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.practitioner-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.practitioner-card.active {
+  border-color: #4a6b5d;
+}
+
+.practitioner-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 12px auto;
+  background: #eee;
+}
+
+.practitioner-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.practitioner-card h4 {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.practitioner-card p {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+.date-time-placeholder {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  text-align: center;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* Summary Sidebar */
+.serene-summary-sidebar {
+  position: sticky;
+  top: 30px;
+  height: fit-content;
+}
+
+.summary-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 30px;
+}
+
+.summary-card h3 {
+  font-family: serif;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding-bottom: 12px;
+}
+
+.summary-line-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.summary-line-item strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.sub-text {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+.summary-price {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.summary-meta-group {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+.meta-label {
+  color: #666;
+}
+
+.meta-value {
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.meta-value.pending {
+  color: #999;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.summary-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+.serene-complete-btn {
+  width: 100%;
+  background-color: #4a6b5d;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-bottom: 12px;
+}
+
+.serene-complete-btn:hover {
+  background-color: #3b5549;
+}
+
+.serene-complete-btn:disabled {
+  background-color: #dcd6ce;
+  cursor: not-allowed;
+}
+
+.tax-note {
+  display: block;
+  text-align: center;
+  font-size: 0.7rem;
+  color: #888;
+}
+
+@media screen and (max-width: 1024px) {
+  .serene-booking-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* --- SERENE Custom Footer Styles --- */
+.serene-footer {
+  background-color: #F4F1ED;
+  padding: 80px 20px 60px 20px;
+  text-align: center;
+}
+
+.serene-footer-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.serene-footer-logo {
+  font-family: serif;
+  font-size: 2.4rem;
+  letter-spacing: 0.15em;
+  color: #1a1a1a;
+  margin-bottom: 35px;
+  font-weight: 400;
+}
+
+.serene-footer-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 40px auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px 30px;
+  max-width: 400px;
+}
+
+.serene-footer-menu li a {
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  color: #555555;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.serene-footer-menu li a:hover {
+  color: #1a1a1a;
+}
+
+.serene-footer-copyright p {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: #777777;
+  text-transform: uppercase;
+}
+
+/* Serene Booking Section Styles */
+.serene-booking-page {
+  background-color: #fafaf7;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #333;
+  padding: 60px 20px;
+}
+
+.serene-booking-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Header */
+.serene-booking-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.serene-booking-header h2 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.serene-booking-header p {
+  color: #666;
+  font-size: 0.95rem;
+  max-width: 550px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Layout */
+.serene-booking-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+@media (max-width: 850px) {
+  .serene-booking-layout {
+    flex-direction: column;
+  }
+
+  .serene-summary-sidebar {
+    width: 100% !important;
+    position: static !important;
+  }
+}
+
+/* Left Column */
+.serene-booking-steps {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.step-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid #e8e6e1;
+  padding-bottom: 12px;
+  margin-bottom: 25px;
+}
+
+.step-title-row h3 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin: 0;
+  color: #222;
+}
+
+.step-badge {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #888;
+  font-weight: 600;
+}
+
+/* Service Cards */
+.service-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  background: #fff;
+  border: 1px solid #fff;
+  /* Invisible border by default if box-shadow is used, but wait, the design shows faint borders or pure white cards on slightly grey background. Let's use slight border */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid transparent;
+}
+
+.service-card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.service-card.active {
+  border-color: #4a6b5d;
+}
+
+.service-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.service-card-top h4 {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 500;
+  color: #222;
+}
+
+.check-icon {
+  width: 22px;
+  height: 22px;
+  background-color: #4a6b5d;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.service-card.active .check-icon {
+  opacity: 1;
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  color: #666;
+  flex-grow: 1;
+  margin: 0 0 24px 0;
+  line-height: 1.5;
+}
+
+.service-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.service-price {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.25rem;
+  color: #222;
+}
+
+/* Practitioner Cards */
+.practitioner-cards-grid {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.practitioner-card {
+  width: 120px;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.2s;
+}
+
+.practitioner-card:hover,
+.practitioner-card.active {
+  opacity: 1;
+}
+
+.practitioner-img {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 12px auto;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #efece6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 2px transparent;
+  transition: box-shadow 0.2s;
+}
+
+.practitioner-card.active .practitioner-img {
+  box-shadow: 0 0 0 2px #4a6b5d;
+}
+
+.practitioner-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.practitioner-card h4 {
+  margin: 0 0 4px 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.practitioner-card p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.any-available-icon {
+  width: 32px;
+  height: 32px;
+  color: #888;
+}
+
+.practitioner-card.active .any-available-icon {
+  color: #4a6b5d;
+}
+
+/* Date Time */
+.date-time-placeholder {
+  background: #fff;
+  padding: 50px 20px;
+  text-align: center;
+  color: #888;
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.calendar-icon {
+  width: 24px;
+  height: 24px;
+  color: #aaa;
+}
+
+.date-time-options {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.date-select-btn {
+  padding: 12px 20px;
+  border: 1px solid #e8e6e1;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.date-select-btn:hover {
+  border-color: #4a6b5d;
+}
+
+.date-select-btn.active-date {
+  background: #4a6b5d;
+  color: #fff;
+  border-color: #4a6b5d;
+}
+
+/* Right Column: Summary */
+.serene-summary-sidebar {
+  width: 340px;
+  position: sticky;
+  top: 30px;
+}
+
+.summary-card {
+  background: #f4f2ec;
+  border: 1px solid #e8e6e1;
+  padding: 30px 25px;
+}
+
+.summary-card h3 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 0 0 24px 0;
+  color: #222;
+}
+
+.summary-content-block {
+  margin-bottom: 20px;
+}
+
+.summary-line-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.summary-line-item strong {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+  color: #222;
+}
+
+.sub-text {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.summary-price {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.summary-meta-group {
+  border-top: 1px solid #e8e6e1;
+  border-bottom: 1px solid #e8e6e1;
+  padding: 20px 0;
+  margin: 20px 0;
+}
+
+.meta-row {
+  margin-bottom: 16px;
+}
+
+.meta-row:last-child {
+  margin-bottom: 0;
+}
+
+.meta-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.meta-value {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #222;
+}
+
+.meta-value.pending {
+  font-style: italic;
+  color: #888;
+  font-weight: 400;
+}
+
+.summary-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #222;
+}
+
+.total-amount {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.4rem;
+}
+
+.serene-complete-btn {
+  width: 100%;
+  padding: 16px;
+  background: #e8e6e1;
+  color: #888;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: not-allowed;
+  transition: all 0.2s;
+}
+
+.serene-complete-btn:not([disabled]) {
+  background: #4a6b5d;
+  color: #fff;
+  cursor: pointer;
+}
+
+.serene-complete-btn:not([disabled]):hover {
+  background: #3c564b;
+}
+
+.tax-note {
+  display: block;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 15px;
+}
+
+
+/* Serene Footer Styles */
+.serene-footer {
+  background-color: #fafaf7;
+  padding: 80px 20px 50px 20px;
+  text-align: center;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.serene-footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+.serene-footer-logo {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #222;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.serene-footer-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.serene-footer-menu li a {
+  text-decoration: none;
+  color: #666;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.serene-footer-menu li a:hover {
+  color: #4a6b5d;
+}
+
+.serene-footer-copyright {
+  margin-top: 15px;
+}
+
+.serene-footer-copyright p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #5a7469;
+  letter-spacing: 0.2px;
+}

@@ -1,0 +1,56 @@
+<footer class="serene-footer">
+  <div class="serene-footer-container">
+    <h2 class="serene-footer-logo">{{ section.settings.footer_logo_text }}</h2>
+
+    <ul class="serene-footer-menu">
+      {%- if section.settings.menu != blank and section.settings.menu.links.size > 0 -%}
+        {%- for link in section.settings.menu.links -%}
+          <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+        {%- endfor -%}
+      {%- else -%}
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+      {%- endif -%}
+    </ul>
+
+    <div class="serene-footer-copyright">
+      <p>{{ section.settings.copyright_text }}</p>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Serene Custom Footer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "footer_logo_text",
+      "label": "Logo Text",
+      "default": "SERENE"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Footer Menu",
+      "info": "If left blank, default placeholder links will be shown."
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright Text",
+      "default": "© 2024 SERENE WELLNESS & SPA. ALL RIGHTS RESERVED."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Serene Custom Footer"
+    }
+  ]
+}
+{% endschema %}

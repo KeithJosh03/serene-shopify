@@ -1,0 +1,191 @@
+{{ 'section-curated-rituals.css' | asset_url | stylesheet_tag }}
+
+<div class="serene-rituals-page">
+  <div class="serene-rituals-container">
+    <!-- Page Header -->
+    <div class="serene-rituals-header">
+      {%- if section.settings.kicker != blank -%}
+        <span class="serene-kicker">{{ section.settings.kicker }}</span>
+      {%- endif -%}
+      <h1>{{ section.settings.title }}</h1>
+      <p>{{ section.settings.subtitle }}</p>
+    </div>
+
+    <!-- Rituals Rows Stack -->
+    <div class="rituals-stack">
+      {%- for block in section.blocks -%}
+        {%- assign modulo = forloop.index0 | modulo: 2 -%}
+        <div class="ritual-row {% if modulo == 1 %}reverse{% endif %}" {{ block.shopify_attributes }}>
+          <!-- Image Column (Single or Collage) -->
+          <div class="ritual-image-wrapper">
+            {%- if block.settings.image_secondary != blank or block.settings.image_tertiary != blank -%}
+              <!-- Collage Layout -->
+              <div class="ritual-collage">
+                <div class="collage-main-img">
+                  {%- if block.settings.image != blank -%}
+                    <img
+                      src="{{ block.settings.image | image_url: width: 1000 }}"
+                      alt="{{ block.settings.category_tag }}"
+                      width="1000"
+                      height="600"
+                      loading="lazy"
+                    >
+                  {%- else -%}
+                    {{ 'lifestyle-1' | placeholder_svg_tag }}
+                  {%- endif -%}
+                </div>
+                <div class="collage-sub-grid">
+                  <div>
+                    {%- if block.settings.image_secondary != blank -%}
+                      <img
+                        src="{{ block.settings.image_secondary | image_url: width: 500 }}"
+                        alt="Gallery view"
+                        width="500"
+                        height="300"
+                        loading="lazy"
+                      >
+                    {%- else -%}
+                      {{ 'lifestyle-2' | placeholder_svg_tag }}
+                    {%- endif -%}
+                  </div>
+                  <div>
+                    {%- if block.settings.image_tertiary != blank -%}
+                      <img
+                        src="{{ block.settings.image_tertiary | image_url: width: 500 }}"
+                        alt="Gallery view"
+                        width="500"
+                        height="300"
+                        loading="lazy"
+                      >
+                    {%- else -%}
+                      {{ 'lifestyle-3' | placeholder_svg_tag }}
+                    {%- endif -%}
+                  </div>
+                </div>
+              </div>
+            {%- else -%}
+              <!-- Standard Single Hero Image Layout -->
+              {%- if block.settings.image != blank -%}
+                <img
+                  src="{{ block.settings.image | image_url: width: 1000 }}"
+                  alt="{{ block.settings.category_tag | escape }}"
+                  width="1000"
+                  height="800"
+                  loading="lazy"
+                >
+              {%- else -%}
+                {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+              {%- endif -%}
+            {%- endif -%}
+          </div>
+
+          <!-- Content Column -->
+          <div class="ritual-content">
+            <span class="ritual-category-tag">{{ block.settings.category_tag }}</span>
+            <p>{{ block.settings.description }}</p>
+
+            {%- if block.settings.link_label != blank -%}
+              <a href="{{ block.settings.link_url }}" class="ritual-link">
+                {{ block.settings.link_label }}
+                <span class="arrow-icon">&rarr;</span>
+              </a>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Curated Rituals Overview",
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Section Kicker",
+      "default": "SERVICES OVERVIEW"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Page Title",
+      "default": "Our Curated Rituals"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Experience a meticulously crafted collection of treatments designed to foster slow beauty, deep relaxation, and profound rejuvenation in a minimalist sanctuary."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ritual_card",
+      "name": "Ritual Feature",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Primary Image (or Top Collage Image)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_secondary",
+          "label": "Collage Secondary Image (Optional)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_tertiary",
+          "label": "Collage Tertiary Image (Optional)"
+        },
+        {
+          "type": "text",
+          "id": "category_tag",
+          "label": "Category Title / Tag",
+          "default": "Skin Therapy"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Our facial treatments blend botanical purity with advanced techniques. We focus on deep nourishment and gentle revitalization, honoring your skin's natural barrier to reveal a luminous, healthy complexion."
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Link Label",
+          "default": "View Menu"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link Destination"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Curated Rituals Overview",
+      "blocks": [
+        {
+          "type": "ritual_card",
+          "settings": {
+            "category_tag": "Skin Therapy",
+            "description": "Our facial treatments blend botanical purity..."
+          }
+        },
+        {
+          "type": "ritual_card",
+          "settings": {
+            "category_tag": "Hair Artistry",
+            "description": "Beyond simple cutting, we practice hair artistry..."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

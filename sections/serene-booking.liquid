@@ -1,0 +1,422 @@
+{{ 'section-serene-booking.css' | asset_url | stylesheet_tag }}
+
+<div class="serene-booking-page">
+  <div class="serene-booking-container">
+    <!-- Header Title -->
+    <div class="serene-booking-header">
+      <h2>{{ section.settings.page_title }}</h2>
+      <p>{{ section.settings.page_subtitle }}</p>
+    </div>
+
+    <div class="serene-booking-layout">
+      <!-- Left Column: The Steps -->
+      <div class="serene-booking-steps">
+        <!-- Step 1: Tabbed Services by Category -->
+        <div class="booking-step-block">
+          <div class="step-title-row">
+            <h3>Select Treatment</h3>
+            <span class="step-badge">STEP 1 OF 3</span>
+          </div>
+
+          {%- assign categories = 'facials:Signature Facials,hair:Hair Studio,skin:Skin Therapy,nails:Nail Atelier,spa:Spa Sanctuary'
+            | split: ','
+          -%}
+
+          <!-- Category Navigation Tabs -->
+          <div class="category-tabs-nav">
+            {%- assign first_active = true -%}
+            {%- for cat in categories -%}
+              {%- assign cat_parts = cat | split: ':' -%}
+              {%- assign cat_key = cat_parts[0] -%}
+              {%- assign cat_name = cat_parts[1] -%}
+
+              {%- assign has_services = false -%}
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'service' and block.settings.category == cat_key -%}
+                  {%- assign has_services = true -%}
+                {%- endif -%}
+              {%- endfor -%}
+
+              {%- if has_services -%}
+                <button class="cat-tab-btn {% if first_active %}active{% endif %}" data-target="pane-{{ cat_key }}">
+                  {{ cat_name }}
+                </button>
+                {%- assign first_active = false -%}
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+
+          <!-- Category Content Panes -->
+          {%- assign pane_active = true -%}
+          {%- for cat in categories -%}
+            {%- assign cat_parts = cat | split: ':' -%}
+            {%- assign cat_key = cat_parts[0] -%}
+
+            <div id="pane-{{ cat_key }}" class="category-pane {% if pane_active %}active{% endif %}">
+              <div class="service-cards-grid">
+                {%- for block in section.blocks -%}
+                  {%- if block.type == 'service' and block.settings.category == cat_key -%}
+                    {%- assign prod = block.settings.product -%}
+                    <div
+                      class="service-card selectable-card"
+                      data-title="{% if prod != blank %}{{ prod.title }}{% else %}{{ block.settings.title }}{% endif %}"
+                      data-price="{% if prod != blank %}{{ prod.price | money_without_currency | remove: ',' }}{% else %}{{ block.settings.price }}{% endif %}"
+                      data-duration="{{ block.settings.duration }}"
+                      data-variant-id="{% if prod != blank %}{{ prod.selected_or_first_available_variant.id }}{% else %}{% endif %}"
+                      {{ block.shopify_attributes }}
+                    >
+                      <div class="service-card-top">
+                        <h4>
+                          {% if prod != blank %}{{ prod.title }}{% else %}{{ block.settings.title }}{% endif %}
+                        </h4>
+                        <span class="check-icon">✓</span>
+                      </div>
+                      <p>
+                        {% if prod != blank and prod.description != blank -%}
+                          {{- prod.description | strip_html | truncate: 100 -}}
+                        {%- else -%}
+                          {{- block.settings.description -}}
+                        {%- endif %}
+                      </p>
+                      <div class="service-card-bottom">
+                        <span>{{ block.settings.duration }} Min</span>
+                        <span class="service-price">
+                          {% if prod != blank %}
+                            {{ prod.price | money }}
+                          {% else %}
+                            ${{ block.settings.price }}
+                          {% endif %}
+                        </span>
+                      </div>
+                    </div>
+                  {%- endif -%}
+                {%- endfor -%}
+              </div>
+            </div>
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'service' and block.settings.category == cat_key -%}
+                {%- assign pane_active = false -%}
+                {%- break -%}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endfor -%}
+        </div>
+
+        <!-- Step 2: Practitioner -->
+        <div class="booking-step-block">
+          <div class="step-title-row">
+            <h3>Select Practitioner</h3>
+            <span class="step-badge">STEP 2 OF 3</span>
+          </div>
+          <div class="practitioner-cards-grid">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'practitioner' -%}
+                <div
+                  class="practitioner-card select-practitioner"
+                  data-name="{{ block.settings.name }}"
+                  {{ block.shopify_attributes }}
+                >
+                  <div class="practitioner-img">
+                    {%- if block.settings.image != blank -%}
+                      <img
+                        src="{{ block.settings.image | image_url: width: 200 }}"
+                        alt="{{ block.settings.name }}"
+                        width="200"
+                        height="200"
+                        loading="lazy"
+                      >
+                    {%- else -%}
+                      {{ 'lifestyle-1' | placeholder_svg_tag }}
+                    {%- endif -%}
+                  </div>
+                  <h4>{{ block.settings.name }}</h4>
+                  <p>{{ block.settings.role }}</p>
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+
+        <!-- Step 3: Date & Time -->
+        <div class="booking-step-block">
+          <div class="step-title-row">
+            <h3>Date & Time</h3>
+            <span class="step-badge">STEP 3 OF 3</span>
+          </div>
+          <div id="date-time-container" class="date-time-placeholder">
+            <p style="color: #6b6764; text-align: center; font-size: 0.95rem;">
+              📅 Please select a practitioner above to view availability slots.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Booking Summary Sidebar -->
+      <div class="serene-summary-sidebar">
+        <div class="summary-card">
+          <h3>Booking Summary</h3>
+          <div class="summary-line-item">
+            <div>
+              <strong id="summary-service-name">Select a treatment</strong>
+              <span id="summary-service-duration" class="sub-text">-</span>
+            </div>
+            <span id="summary-service-price" class="summary-price">$0</span>
+          </div>
+
+          <div class="summary-meta-group">
+            <div class="meta-row">
+              <span class="meta-label">Practitioner</span>
+              <span id="summary-practitioner" class="meta-value pending">Pending Selection</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">Date & Time</span>
+              <span id="summary-datetime" class="meta-value pending">Pending Selection</span>
+            </div>
+          </div>
+
+          <div class="summary-total-row">
+            <span>Total</span>
+            <span id="summary-total-price" class="total-amount">$0</span>
+          </div>
+
+          <button id="complete-booking-btn" class="serene-complete-btn" disabled>COMPLETE BOOKING</button>
+          <span class="tax-note">Taxes calculated at checkout</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const tabBtns = document.querySelectorAll('.cat-tab-btn');
+    const panes = document.querySelectorAll('.category-pane');
+    const serviceCards = document.querySelectorAll('.service-card');
+    const practitionerCards = document.querySelectorAll('.select-practitioner');
+    const dateTimeContainer = document.getElementById('date-time-container');
+
+    const summaryName = document.getElementById('summary-service-name');
+    const summaryDuration = document.getElementById('summary-service-duration');
+    const summaryPrice = document.getElementById('summary-service-price');
+    const summaryTotal = document.getElementById('summary-total-price');
+    const summaryPractitioner = document.getElementById('summary-practitioner');
+    const summaryDatetime = document.getElementById('summary-datetime');
+    const completeBtn = document.getElementById('complete-booking-btn');
+
+    let state = {
+      service: null,
+      duration: null,
+      price: '0',
+      variantId: null,
+      practitioner: null,
+      datetime: null,
+    };
+
+    // Auto-select category tab from URL parameter if present (e.g. ?category=skin)
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetCategory = urlParams.get('category');
+    if (targetCategory) {
+      const matchingTab = document.querySelector(`.cat-tab-btn[data-target="pane-${targetCategory}"]`);
+      if (matchingTab) {
+        matchingTab.click();
+      }
+    }
+
+    // Handle Category Tab Switching
+    tabBtns.forEach((btn) => {
+      btn.addEventListener('click', function () {
+        tabBtns.forEach((b) => b.classList.remove('active'));
+        panes.forEach((p) => p.classList.remove('active'));
+
+        this.classList.add('active');
+        const targetPane = document.getElementById(this.dataset.target);
+        if (targetPane) {
+          targetPane.classList.add('active');
+        }
+      });
+    });
+
+    // Handle Service Selection
+    serviceCards.forEach((card) => {
+      card.addEventListener('click', function () {
+        serviceCards.forEach((c) => c.classList.remove('active'));
+        this.classList.add('active');
+
+        state.service = this.dataset.title;
+        state.duration = this.dataset.duration + ' Min';
+        state.price = this.dataset.price;
+        state.variantId = this.dataset.variantId;
+
+        summaryName.textContent = state.service;
+        summaryDuration.textContent = state.duration;
+        summaryPrice.textContent = '$' + state.price;
+        summaryTotal.textContent = '$' + state.price;
+
+        if (state.practitioner && state.datetime && state.variantId) {
+          completeBtn.removeAttribute('disabled');
+        }
+      });
+    });
+
+    // Handle Practitioner Selection
+    practitionerCards.forEach((card) => {
+      card.addEventListener('click', function () {
+        practitionerCards.forEach((c) => c.classList.remove('active'));
+        this.classList.add('active');
+
+        state.practitioner = this.dataset.name;
+        summaryPractitioner.textContent = state.practitioner;
+        summaryPractitioner.classList.remove('pending');
+
+        dateTimeContainer.innerHTML = `
+          <div style="display: flex; gap: 12px; justify-content: center; align-items: center; flex-wrap: wrap;">
+            <button class="date-select-btn" style="padding: 12px 20px; border: 1px solid #e8e5e0; background: #fff; cursor: pointer; font-size: 0.9rem;">Oct 24, 2026 - 10:00 AM</button>
+            <button class="date-select-btn" style="padding: 12px 20px; border: 1px solid #e8e5e0; background: #fff; cursor: pointer; font-size: 0.9rem;">Oct 25, 2026 - 2:00 PM</button>
+          </div>
+        `;
+
+        document.querySelectorAll('.date-select-btn').forEach((btn) => {
+          btn.addEventListener('click', function () {
+            document.querySelectorAll('.date-select-btn').forEach((b) => {
+              b.style.background = '#fff';
+              b.style.color = '#2c2a29';
+              b.style.borderColor = '#e8e5e0';
+            });
+            this.style.background = '#1a1918';
+            this.style.color = '#fff';
+            this.style.borderColor = '#1a1918';
+
+            state.datetime = this.textContent;
+            summaryDatetime.textContent = state.datetime;
+            summaryDatetime.classList.remove('pending');
+
+            if (state.service && state.variantId) {
+              completeBtn.removeAttribute('disabled');
+            }
+          });
+        });
+      });
+    });
+
+    // Handle Real Shopify Checkout Submission via Ajax API
+    completeBtn.addEventListener('click', function () {
+      if (!state.variantId) {
+        alert('Please select a valid service connected to a Shopify product.');
+        return;
+      }
+
+      completeBtn.textContent = 'SECURED CHECKOUT...';
+      completeBtn.setAttribute('disabled', 'true');
+
+      // Add custom booking properties (Practitioner and Time) as line item properties
+      let formData = {
+        items: [
+          {
+            id: state.variantId,
+            quantity: 1,
+            properties: {
+              Practitioner: state.practitioner,
+              'Appointment Time': state.datetime,
+              Duration: state.duration,
+            },
+          },
+        ],
+      };
+
+      fetch(window.Shopify.routes.root + 'cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          // Redirect straight to Shopify checkout page
+          window.location.href = '/checkout';
+        })
+        .catch((error) => {
+          console.error('Error adding booking to cart:', error);
+          alert('There was an issue processing your booking. Please try again.');
+          completeBtn.textContent = 'COMPLETE BOOKING';
+          completeBtn.removeAttribute('disabled');
+        });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Serene Booking Flow",
+  "settings": [
+    {
+      "type": "text",
+      "id": "page_title",
+      "label": "Page Title",
+      "default": "Select Your Service"
+    },
+    {
+      "type": "textarea",
+      "id": "page_subtitle",
+      "label": "Subtitle",
+      "default": "Curated treatments designed to restore balance and elevate your natural radiance. Please select from our signature offerings below."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "service",
+      "name": "Service Option",
+      "settings": [
+        {
+          "type": "select",
+          "id": "category",
+          "label": "Service Category",
+          "options": [
+            { "value": "hair", "label": "Hair Studio" },
+            { "value": "skin", "label": "Skin Therapy" },
+            { "value": "nails", "label": "Nail Atelier" },
+            { "value": "spa", "label": "Spa Sanctuary" }
+          ],
+          "default": "skin"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Link Shopify Product",
+          "info": "Pulls dynamic title, price, and variant ID directly from your store catalog."
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Fallback Service Name (If no product linked)",
+          "default": "The Serene Glow"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Fallback Description",
+          "default": "A deeply hydrating treatment utilizing botanical extracts."
+        },
+        { "type": "text", "id": "duration", "label": "Duration (Minutes)", "default": "60" },
+        { "type": "text", "id": "price", "label": "Fallback Price ($)", "default": "150" }
+      ]
+    },
+    {
+      "type": "practitioner",
+      "name": "Practitioner Option",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Photo" },
+        { "type": "text", "id": "name", "label": "Name", "default": "Elena Rostova" },
+        { "type": "text", "id": "role", "label": "Role", "default": "Master Aesthetician" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Serene Booking Flow"
+    }
+  ]
+}
+{% endschema %}

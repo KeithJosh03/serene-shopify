@@ -1,0 +1,108 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "booking_flow": {
+      "type": "serene-booking",
+      "blocks": {
+        "service_8gi9qD": {
+          "type": "service",
+          "settings": {
+            "category": "hair",
+            "product": "",
+            "title": " Luxury Balayage & Custom Cut",
+            "description": "Bespoke hand-painted highlights tailored to your features, finished with a precision cut and blowout.",
+            "duration": "120",
+            "price": "180"
+          }
+        },
+        "service_AGnTQw": {
+          "type": "service",
+          "settings": {
+            "category": "hair",
+            "product": "",
+            "title": "Silk Gloss Treatment & Blowout",
+            "description": "An intensive molecular glossing treatment that locks in mirror-shine radiance, paired with a signature blowout.",
+            "duration": "60",
+            "price": "110"
+          }
+        },
+        "service_ty8ryD": {
+          "type": "service",
+          "settings": {
+            "category": "hair",
+            "product": "",
+            "title": "Precision Scalp Therapy & Conditioning",
+            "description": "A revitalizing scalp exfoliation and deep-conditioning masque designed to restore follicle health and moisture balance.",
+            "duration": "75",
+            "price": "140"
+          }
+        },
+        "service_NKznRH": {
+          "type": "service",
+          "settings": {
+            "category": "facials",
+            "product": "",
+            "title": "Purifying Ritual",
+            "description": "A targeted treatment for congested skin, featuring deep cleansing, extraction, and calming mask.",
+            "duration": "60",
+            "price": "150"
+          }
+        },
+        "service_MbQQPp": {
+          "type": "service",
+          "settings": {
+            "category": "facials",
+            "product": "",
+            "title": "The Serene Glow",
+            "description": "A deeply hydrating treatment utilizing botanical extracts.",
+            "duration": "60",
+            "price": "150"
+          }
+        },
+        "service_Gm7UXJ": {
+          "type": "service",
+          "settings": {
+            "category": "facials",
+            "product": "",
+            "title": "Cellular Renewal",
+            "description": "Advanced exfoliation combined with LED theraphy to stimulate collagen production and refine texture.",
+            "duration": "90",
+            "price": "150"
+          }
+        }
+      },
+      "block_order": [
+        "service_8gi9qD",
+        "service_AGnTQw",
+        "service_ty8ryD",
+        "service_NKznRH",
+        "service_MbQQPp",
+        "service_Gm7UXJ"
+      ],
+      "settings": {
+        "page_title": "Select Your Service",
+        "page_subtitle": "Curated treatments designed to restore balance and elevate your natural radiance. Please select from our signature offerings below."
+      }
+    },
+    "serene-footer": {
+      "type": "serene-footer",
+      "settings": {
+        "footer_logo_text": "SERENE",
+        "menu": "",
+        "copyright_text": "© 2024 SERENE WELLNESS & SPA. ALL RIGHTS RESERVED."
+      }
+    }
+  },
+  "order": [
+    "booking_flow",
+    "serene-footer"
+  ]
+}
