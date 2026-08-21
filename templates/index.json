@@ -66,18 +66,9 @@
         "section_subtext": "Select from our range of bespoke treatments, each designed with meticulous attention to detail and your absolute comfort in mind."
       }
     },
-    "serene_footer": {
-      "type": "serene-footer",
-      "settings": {
-        "footer_logo_text": "SERENE",
-        "menu": "",
-        "copyright_text": "© 2024 SERENE WELLNESS & SPA. ALL RIGHTS RESERVED."
-      }
-    }
   },
   "order": [
     "serene_hero_custom",
-    "serene_curated_grid",
-    "serene_footer"
+    "serene_curated_grid"
   ]
 }
