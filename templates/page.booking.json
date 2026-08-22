@@ -12,6 +12,30 @@
     "booking_flow": {
       "type": "serene-booking",
       "blocks": {
+        "practitioner_X4bTYK": {
+          "type": "practitioner",
+          "settings": {
+            "image": "shopify://shop_images/screen4.png",
+            "name": "Maoui Kaya",
+            "role": "Master Aesthetician"
+          }
+        },
+        "practitioner_paPKqb": {
+          "type": "practitioner",
+          "settings": {
+            "image": "shopify://shop_images/screen3.png",
+            "name": "Juan Dela Cruz",
+            "role": "Master Aesthetician"
+          }
+        },
+        "practitioner_6jRWdr": {
+          "type": "practitioner",
+          "settings": {
+            "image": "shopify://shop_images/screen2.png",
+            "name": "Nang Lourdes",
+            "role": "Master Aesthetician"
+          }
+        },
         "service_rBgKtg": {
           "type": "service",
           "settings": {
@@ -146,6 +170,9 @@
         }
       },
       "block_order": [
+        "practitioner_X4bTYK",
+        "practitioner_paPKqb",
+        "practitioner_6jRWdr",
         "service_rBgKtg",
         "service_h6jWMm",
         "service_tYJqqR",

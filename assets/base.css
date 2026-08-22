@@ -354,49 +354,7 @@ header.header {
   color: #1a1a1a;
 }
 
-.practitioner-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
 
-.practitioner-card {
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  padding: 20px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.practitioner-card.active {
-  border-color: #4a6b5d;
-}
-
-.practitioner-img {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 0 auto 12px auto;
-  background: #eee;
-}
-
-.practitioner-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.practitioner-card h4 {
-  font-size: 0.95rem;
-  margin-bottom: 4px;
-}
-
-.practitioner-card p {
-  font-size: 0.75rem;
-  color: #777;
-}
 
 .date-time-placeholder {
   background: #fff;
@@ -757,72 +715,7 @@ header.header {
   color: #222;
 }
 
-/* Practitioner Cards */
-.practitioner-cards-grid {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-}
 
-.practitioner-card {
-  width: 120px;
-  text-align: center;
-  cursor: pointer;
-  opacity: 0.6;
-  transition: all 0.2s;
-}
-
-.practitioner-card:hover,
-.practitioner-card.active {
-  opacity: 1;
-}
-
-.practitioner-img {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 12px auto;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #efece6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 0 2px transparent;
-  transition: box-shadow 0.2s;
-}
-
-.practitioner-card.active .practitioner-img {
-  box-shadow: 0 0 0 2px #4a6b5d;
-}
-
-.practitioner-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.practitioner-card h4 {
-  margin: 0 0 4px 0;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #333;
-}
-
-.practitioner-card p {
-  margin: 0;
-  font-size: 0.75rem;
-  color: #888;
-}
-
-.any-available-icon {
-  width: 32px;
-  height: 32px;
-  color: #888;
-}
-
-.practitioner-card.active .any-available-icon {
-  color: #4a6b5d;
-}
 
 /* Date Time */
 .date-time-placeholder {

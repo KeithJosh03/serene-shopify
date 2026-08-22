@@ -224,25 +224,11 @@
     if (targetCategory) {
       let matchingTab = null;
       tabBtns.forEach((btn) => {
-        btn.addEventListener('click', function () {
-          tabBtns.forEach((b) => b.classList.remove('active'));
-          panes.forEach((p) => p.classList.remove('active'));
-
-          this.classList.add('active');
-          const targetPane = document.getElementById(this.dataset.target);
-          if (targetPane) {
-            targetPane.classList.add('active');
-          }
-
-          // Get the category key (e.g., "skin" or "hair")
-          const catKey = this.getAttribute('data-category-key');
-
-          // Update the browser URL without reloading the page
-          if (catKey) {
-            const newUrl = `${window.location.pathname}?category=${catKey}`;
-            window.history.replaceState({ category: catKey }, '', newUrl);
-          }
-        });
+        const catKey = btn.getAttribute('data-category-key');
+        const catName = btn.getAttribute('data-category-name');
+        if (catKey === targetCategory || catName === targetCategory) {
+          matchingTab = btn;
+        }
       });
 
       if (matchingTab) {
@@ -267,6 +253,13 @@
         const targetPane = document.getElementById(this.dataset.target);
         if (targetPane) {
           targetPane.classList.add('active');
+        }
+
+        // Update the browser URL without reloading the page
+        const catName = this.getAttribute('data-category-name');
+        if (catName) {
+          const newUrl = `${window.location.pathname}?category=${catName}`;
+          window.history.replaceState({ category: catName }, '', newUrl);
         }
       });
     });
