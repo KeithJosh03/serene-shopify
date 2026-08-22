@@ -180,12 +180,20 @@
 
   .check-icon {
       display: none;
-      color: #8c7853;
+      width: 24px;
+      height: 24px;
+      background-color: #8c7853;
+      color: #ffffff !important;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
       font-weight: bold;
+      flex-shrink: 0;
   }
 
   .service-card.active .check-icon {
-      display: block;
+      display: flex;
   }
 
   .service-card p {

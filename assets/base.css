@@ -324,15 +324,7 @@ header.header {
   color: #1a1a1a;
 }
 
-.check-icon {
-  display: none;
-  color: #4a6b5d;
-  font-weight: bold;
-}
 
-.service-card.active .check-icon {
-  display: block;
-}
 
 .service-card p {
   font-size: 0.85rem;
@@ -675,23 +667,7 @@ header.header {
   color: #222;
 }
 
-.check-icon {
-  width: 22px;
-  height: 22px;
-  background-color: #4a6b5d;
-  color: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.2s;
-  flex-shrink: 0;
-}
 
-.service-card.active .check-icon {
-  opacity: 1;
-}
 
 .service-card p {
   font-size: 0.9rem;

@@ -191,17 +191,8 @@
         "page_subtitle": "Curated treatments designed to restore balance and elevate your natural radiance. Please select from our signature offerings below."
       }
     },
-    "serene-footer": {
-      "type": "serene-footer",
-      "settings": {
-        "footer_logo_text": "SERENE",
-        "menu": "",
-        "copyright_text": "© 2024 SERENE WELLNESS & SPA. ALL RIGHTS RESERVED."
-      }
-    }
   },
   "order": [
     "booking_flow",
-    "serene-footer"
   ]
 }
