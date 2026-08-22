@@ -18,7 +18,7 @@
             "image": "shopify://shop_images/hairstudio.jpg",
             "category_tag": "Hair Studio",
             "description": "Beyond simple cutting, we practice hair artistry. Our approach considers your natural texture, lifestyle, and personal aesthetic, creating effortless styles that grow out beautifully and feel inherently yours.",
-            "link_label": "",
+            "link_label": "View Menu",
             "link_url": "/pages/booking?category=hair-studio"
           }
         },
@@ -39,7 +39,7 @@
             "category_tag": "Spa Sanctuary",
             "description": "Surrender to total body restoration. Our holistic therapies, encompassing therapeutic massage and warm body wraps, are designed to soothe tension, stimulate circulation, and guide you into a state of profound stillness.",
             "link_label": "View Menu",
-            "link_url": "/pages/booking?category=spac-sanctuary/"
+            "link_url": "/pages/booking?category=spa-sanctuary"
           }
         },
         "ritual_card_wxKzpL": {

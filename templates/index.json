@@ -16,7 +16,7 @@
         "heading": "Quiet Luxury, Elevated.",
         "subtext": "Experience a sanctuary of rejuvenation. Tailored services designed to restore balance and enhance your natural radiance.",
         "button_label": "Discover Our Services",
-        "button_link": ""
+        "button_link": "shopify://pages/services"
       }
     },
     "serene_curated_grid": {
@@ -27,7 +27,7 @@
           "settings": {
             "image": "shopify://shop_images/hairstudio.jpg",
             "title": "Hair Studio",
-            "link": ""
+            "link": "/pages/booking?category=hair-studio"
           }
         },
         "column_WHYEqM": {
@@ -35,7 +35,7 @@
           "settings": {
             "image": "shopify://shop_images/skintherapy.jpg",
             "title": "Skin Therapy",
-            "link": ""
+            "link": "/pages/booking?category=skin-therapy"
           }
         },
         "column_wDVbtW": {
@@ -43,7 +43,7 @@
           "settings": {
             "image": "shopify://shop_images/nail.jpg",
             "title": "Nail Atelier",
-            "link": ""
+            "link": "/pages/booking?category=nail-atelier"
           }
         },
         "column_hf4Acg": {
@@ -51,7 +51,7 @@
           "settings": {
             "image": "shopify://shop_images/spa.jpg",
             "title": "Spa Sanctuary",
-            "link": ""
+            "link": "/pages/booking?category=spa-sanctuary"
           }
         }
       },
@@ -65,7 +65,7 @@
         "section_heading": "Curated Experiences",
         "section_subtext": "Select from our range of bespoke treatments, each designed with meticulous attention to detail and your absolute comfort in mind."
       }
-    },
+    }
   },
   "order": [
     "serene_hero_custom",
